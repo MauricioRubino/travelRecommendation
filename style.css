@@ -85,3 +85,202 @@ body {
 .hero-p{
     margin-left: 50px;
 }
+
+
+
+/*ABOUT US*/
+/* Hero Section Styles */
+.about_us {
+    margin-top: 10px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    text-align: center;
+    height: 100vh;
+    padding: 0 20px;
+    position: relative;
+    margin-right: 500px;
+}
+
+.aboutus_content {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start; /* Centra el contenido horizontal dentro del contenedor */
+    justify-content: flex-start; /* Alinea el contenido al inicio verticalmente */
+    max-width: 800px;
+}
+
+/* H1 Styling */
+.about_us h1 {
+    font-size: calc(4vw + 2vh); /* Escala dinámica del tamaño del texto */
+    width: 40%; /* Ocupa el 40% del ancho */
+    height: 45vh; /* Ocupa el 45% de la altura total del body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0;
+    border: 2px solid rgba(255, 255, 255, 0.6); /* Bordes opcionales para resaltar el h1 */
+    background: rgba(0, 0, 0, 0.4); /* Fondo oscuro semi-transparente */
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra opcional */
+}
+
+/* P Styling */
+.about_us p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-top: 20px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.4); /* Fondo oscuro semi-transparente para legibilidad */
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 100%; /* Limita el ancho del párrafo */
+}
+
+/*TEAM*/
+
+/* General Section Styling */
+.team {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.team h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Team Members Container */
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Individual Team Member */
+.team-member {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    width: 300px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Team Member Image */
+.team-member img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Team Member Details */
+.team-member h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 15px;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #666;
+    margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 90%;
+    }
+}
+
+/* CONTACT*/
+/* Contact Form Section */
+.contact-form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-form h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #00bcd4;
+}
+
+/* Submit Button Styling */
+.submit-btn {
+    background-color: #00bcd4;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #008c9e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 15px;
+    }
+}
