@@ -1,0 +1,68 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del navbar */
+nav {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Estilo de los enlaces */
+nav .links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 8px 16px;
+}
+
+nav .links a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+/* Estilo de la barra de búsqueda */
+nav .search-bar {
+    display: flex;
+    align-items: center;
+}
+
+nav .search-bar input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+nav .search-bar button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Botón de búsqueda */
+nav .search-bar button.search-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Botón de reinicio */
+nav .search-bar button.reset-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Efecto hover en botones */
+nav .search-bar button:hover {
+    opacity: 0.9;
+}
