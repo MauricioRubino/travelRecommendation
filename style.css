@@ -1,93 +1,225 @@
 /* Estilo general */
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Estilo del navbar */
+/* Body general */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Barra de navegación */
 nav {
     background-color: #333;
-    color: white;
+    padding: 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo de los enlaces */
+nav .links {
+    display: flex;
+    gap: 20px;
+}
+
 nav .links a {
-    color: white;
+    color: #fff;
+    font-size: 16px;
     text-decoration: none;
-    margin: 0 10px;
-    padding: 8px 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav .links a:hover {
-    background-color: #575757;
-    border-radius: 4px;
+    color: #4CAF50;
 }
 
-/* Estilo de la barra de búsqueda */
 nav .search-bar {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
-nav .search-bar input[type="text"] {
-    padding: 8px;
+nav .search-bar input {
+    padding: 8px 12px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 5px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: 250px;
+    transition: all 0.3s ease;
+}
+
+nav .search-bar input:focus {
+    border-color: #4CAF50;
+    outline: none;
 }
 
 nav .search-bar button {
     padding: 8px 16px;
-    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-/* Botón de búsqueda */
-nav .search-bar button.search-btn {
-    background-color: #4CAF50;
-    color: white;
-}
-
-/* Botón de reinicio */
-nav .search-bar button.reset-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-/* Efecto hover en botones */
 nav .search-bar button:hover {
-    opacity: 0.9;
+    background-color: #45a049;
 }
 
-body {
+/* Estilo para los iconos sociales */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+}
+
+.social-icons img {
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* Sección hero */
+.content {
     background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
 }
 
-.hero-text{
-    font-size: 91px;
-    margin-left: 50px;
+.hero-text {
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
-.book-now{
-    background-color: blueviolet;
-    border-radius: 50px;
-    margin-left: 50px;
+.hero-p {
+    font-size: 1.2em;
+    margin-top: 20px;
 }
 
-.hero-p{
-    margin-left: 50px;
+.book-now {
+    padding: 15px 30px;
+    background-color: #333;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+.book-now:hover {
+    background-color: #444;
+}
 
+/* Estilo de las recomendaciones */
+#recommendations {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    margin-top: 50px;
+}
 
+#recommendations .destination {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#recommendations .destination:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#recommendations .destination img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#recommendations .destination h2 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#recommendations .destination p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Títulos */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-top: 50px;
+    letter-spacing: 2px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav .search-bar {
+        margin-top: 20px;
+    }
+
+    .social-icons {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .content {
+        padding: 50px 20px;
+    }
+
+    .hero-text {
+        font-size: 2.5em;
+    }
+
+    .hero-p {
+        font-size: 1em;
+    }
+
+    .book-now {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    #recommendations {
+        grid-template-columns: 1fr;
+    }
+}
 /*ABOUT US*/
 /* Hero Section Styles */
 .about_us {
@@ -140,6 +272,8 @@ body {
     border-radius: 5px;
     max-width: 100%; /* Limita el ancho del párrafo */
 }
+
+
 
 /*TEAM*/
 
@@ -214,6 +348,8 @@ body {
     }
 }
 
+
+
 /* CONTACT*/
 /* Contact Form Section */
 .contact-form {
@@ -283,97 +419,4 @@ body {
     .contact-form {
         padding: 15px;
     }
-}
-
-/*Carussel*/
-
-.card-carousel {
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 80%;
-    max-width: 900px;
-    overflow: hidden;
-}
-
-/* Navigation Buttons */
-.nav-button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 10px 15px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-}
-
-.nav-button.left {
-    left: 0;
-}
-
-.nav-button.right {
-    right: 0;
-}
-
-.nav-button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-/* Cards Container */
-.cards {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-}
-
-/* Individual Card */
-.card {
-    min-width: 100%;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.card.active {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.card img {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.card h3 {
-    margin: 20px 0 10px;
-    font-size: 1.5rem;
-    color: #333;
-}
-
-.card p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.visit-btn {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.visit-btn:hover {
-    background-color: #0056b3;
 }

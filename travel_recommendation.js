@@ -78,73 +78,77 @@ const travelData = {
         "description": "A famous beach in Rio de Janeiro, Brazil, with a vibrant atmosphere and scenic views."
       }
     ]
-  }
-  
-  
-  // Función para manejar la búsqueda
-  function search() {
+}
+
+// Función para manejar la búsqueda
+function search() {
     const searchInput = document.getElementById("search").value.toLowerCase(); // Obtener el valor de búsqueda en minúsculas
     const recommendationsDiv = document.getElementById("recommendations");
     recommendationsDiv.innerHTML = ""; // Limpiar resultados anteriores
-  
+
     // Array para almacenar resultados de búsqueda
     const results = [];
-  
+
     // Buscar coincidencias en playas
     travelData.beaches.forEach((beach) => {
-      if (beach.name.toLowerCase().includes(searchInput)) {
-        results.push(beach);
-      }
+        if (beach.name.toLowerCase().includes(searchInput)) {
+            results.push(beach);
+        }
     });
-  
+
     // Buscar coincidencias en templos
     travelData.temples.forEach((temple) => {
-      if (temple.name.toLowerCase().includes(searchInput)) {
-        results.push(temple);
-      }
+        if (temple.name.toLowerCase().includes(searchInput)) {
+            results.push(temple);
+        }
     });
-  
+
     // Buscar coincidencias en países y ciudades
     travelData.countries.forEach((country) => {
-      if (country.name.toLowerCase().includes(searchInput)) {
-        results.push(country);
-      }
-      country.cities.forEach((city) => {
-        if (city.name.toLowerCase().includes(searchInput)) {
-          results.push(city);
+        if (country.name.toLowerCase().includes(searchInput)) {
+            results.push(country);
         }
-      });
+        country.cities.forEach((city) => {
+            if (city.name.toLowerCase().includes(searchInput)) {
+                results.push(city);
+            }
+        });
     });
-  
+
     // Mostrar resultados en el DOM
     if (results.length > 0) {
-      results.forEach((item) => {
-        const resultDiv = document.createElement("div");
-        resultDiv.classList.add("result-item");
-  
-        const title = document.createElement("h3");
-        title.textContent = item.name;
-  
-        const description = document.createElement("p");
-        description.textContent = item.description;
-  
-        const image = document.createElement("img");
-        image.src = item.imageUrl;
-        image.alt = item.name;
-  
-        resultDiv.appendChild(title);
-        resultDiv.appendChild(description);
-        resultDiv.appendChild(image);
-        recommendationsDiv.appendChild(resultDiv);
-      });
+        results.forEach((item) => {
+            const resultDiv = document.createElement("div");
+            resultDiv.classList.add("result-item");
+
+            const title = document.createElement("h3");
+            title.textContent = item.name;
+
+            const description = document.createElement("p");
+            description.textContent = item.description;
+
+            const image = document.createElement("img");
+            image.src = item.imageUrl;
+            image.alt = item.name;
+
+            resultDiv.appendChild(title);
+            resultDiv.appendChild(description);
+            resultDiv.appendChild(image);
+            recommendationsDiv.appendChild(resultDiv);
+        });
+
+        // Desplazar la página hasta el contenedor de recomendaciones
+        recommendationsDiv.scrollIntoView({
+            behavior: 'smooth',  // Hacer el desplazamiento suave
+            block: 'start'       // Asegurarse de que el contenedor quede en la parte superior visible
+        });
     } else {
-      recommendationsDiv.innerHTML = "<p>No results found.</p>";
+        recommendationsDiv.innerHTML = "<p>No results found.</p>";
     }
-  }
-  
-  // Función para resetear la búsqueda
-  function resetSearch() {
+}
+
+// Función para resetear la búsqueda
+function resetSearch() {
     document.getElementById("search").value = ""; // Limpiar el campo de búsqueda
     document.getElementById("recommendations").innerHTML = ""; // Limpiar los resultados
-  }
-  
+}
