@@ -89,40 +89,31 @@ function search() {
     // Array para almacenar resultados de búsqueda
     const results = [];
 
-    // Normalizar la entrada de búsqueda para manejar variaciones de palabras clave
-    let searchTerm = searchInput;
+    // Buscar coincidencias en playas
+    travelData.beaches.forEach((beach) => {
+        if (beach.name.toLowerCase().includes(searchInput)) {
+            results.push(beach);
+        }
+    });
 
-    // Buscar coincidencias en playas si la búsqueda contiene "beach" o "beaches"
-    if (searchTerm.includes("beach") || searchTerm.includes("beaches")) {
-        travelData.beaches.forEach((beach) => {
-            if (beach.name.toLowerCase().includes(searchTerm)) {
-                results.push(beach);
+    // Buscar coincidencias en templos
+    travelData.temples.forEach((temple) => {
+        if (temple.name.toLowerCase().includes(searchInput)) {
+            results.push(temple);
+        }
+    });
+
+    // Buscar coincidencias en países y ciudades
+    travelData.countries.forEach((country) => {
+        if (country.name.toLowerCase().includes(searchInput)) {
+            results.push(country);
+        }
+        country.cities.forEach((city) => {
+            if (city.name.toLowerCase().includes(searchInput)) {
+                results.push(city);
             }
         });
-    }
-
-    // Buscar coincidencias en templos si la búsqueda contiene "temple" o "temples"
-    if (searchTerm.includes("temple") || searchTerm.includes("temples")) {
-        travelData.temples.forEach((temple) => {
-            if (temple.name.toLowerCase().includes(searchTerm)) {
-                results.push(temple);
-            }
-        });
-    }
-
-    // Buscar coincidencias en países si la búsqueda contiene "country" o "countries"
-    if (searchTerm.includes("country") || searchTerm.includes("countries")) {
-        travelData.countries.forEach((country) => {
-            if (country.name.toLowerCase().includes(searchTerm)) {
-                results.push(country);
-            }
-            country.cities.forEach((city) => {
-                if (city.name.toLowerCase().includes(searchTerm)) {
-                    results.push(city);
-                }
-            });
-        });
-    }
+    });
 
     // Mostrar resultados en el DOM
     if (results.length > 0) {
